@@ -1,4 +1,3 @@
-import React from "react";
 import { useEffect } from "react";
 import { useAllCharactersStore } from "../stores/AllCharacters";
 import CharacterCard  from "./CharacterCard";

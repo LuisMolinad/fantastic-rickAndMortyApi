@@ -16,9 +16,9 @@ function CharacterCard({
   species,
 }: CharacterCardProps) {
   return (
-    <div  key={id} className="w-full max-w-xs">
-      <div className="flex flex-col bg-neutral-primary-soft border border-default rounded-base shadow-xs overflow-hidden">
-        
+    <div key={id} className="w-full max-w-xs bg-blue-950 rounded-md overflow-hidden">
+      <div className="flex flex-col bg-neutral-primary-soft shadow-xs overflow-hidden">
+
         <img
           className="object-cover w-full h-56"
           src={image}
