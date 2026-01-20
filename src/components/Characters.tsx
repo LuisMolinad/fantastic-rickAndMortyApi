@@ -1,5 +1,7 @@
-import { useEffect } from "react"
-import { useAllCharactersStore } from "../stores/AllCharacters"
+import React from "react";
+import { useEffect } from "react";
+import { useAllCharactersStore } from "../stores/AllCharacters";
+import CharacterCard  from "./CharacterCard";
 
 const Characters = () => {
   const { characters, fetchCharacters, loading } = useAllCharactersStore()
@@ -8,18 +10,26 @@ const Characters = () => {
     fetchCharacters()
   }, [])
   
-  if (loading) return <p>Cargando...</p>
+  if (loading) {
+    return (
+    <div className="text-center text-lg font-medium text-body">
+      Cargando personajes...
+    </div>
+    )
+  }
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
       {characters.map((char) => (
-        <div
+        <CharacterCard 
           key={char.id}
-          className="bg-gray-800 rounded p-3"
-        >
-          <img src={char.image} alt={char.name} />
-          <p className="mt-2">{char.name}</p>
-        </div>
+          id={char.id}
+          name={char.name}
+          image={char.image}
+          url={char.url}
+          status={char.status}
+          species={char.species}
+        />
       ))}
     </div>
   )
