@@ -16,8 +16,8 @@ function CharacterCard({
   species,
 }: CharacterCardProps) {
   return (
-    <div key={id} className="w-full max-w-xs bg-blue-950 rounded-md overflow-hidden">
-      <div className="flex flex-col bg-neutral-primary-soft shadow-xs overflow-hidden">
+    <div key={id} className="w-full max-w-xs bg-blue-950 rounded-md overflow-hidden dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300">
+      <div className="flex flex-col bg-neutral-primary-soft shadow-xs overflow-hidden dark:bg-gray-700">
 
         <img
           className="object-cover w-full h-56"
@@ -26,11 +26,11 @@ function CharacterCard({
         />
 
         <div className="flex flex-col flex-1 p-4">
-          <h5 className="mb-1 text-lg font-bold tracking-tight text-heading">
+          <h5 className="mb-1 text-lg font-bold tracking-tight text-heading dark:text-white">
             {name}
           </h5>
 
-          <p className="mb-4 text-sm text-body">
+          <p className="mb-4 text-sm text-body dark:text-gray-300">
             {species} · {status}
           </p>
 
@@ -38,7 +38,7 @@ function CharacterCard({
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-auto inline-flex items-center justify-center text-sm font-medium text-body bg-neutral-secondary-medium border border-default-medium rounded-base px-4 py-2.5 hover:bg-neutral-tertiary-medium hover:text-heading transition"
+            className="mt-auto inline-flex items-center justify-center text-sm font-medium text-body bg-neutral-secondary-medium border border-default-medium rounded-base px-4 py-2.5 hover:bg-neutral-tertiary-medium hover:text-heading transition daration-200 dark:bg-gray-600 dark:border-gray-500 dark:hover:bg-gray-500 dark:text-white "
           >
             Read more
             <svg
